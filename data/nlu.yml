@@ -94,18 +94,19 @@ nlu:
 - intent: number_of_rooms
   examples: |
     - I want to book [2](num_of_rooms) rooms
-    - [2](num_of_rooms) rooms
+    - I would like to book [2](num_of_rooms) rooms
     - [6](num_of_rooms) rooms
     - book [3](num_of_rooms) rooms
-    - book [1](num_of_rooms) room
+    - I want to book a room for [2](num_of_rooms) people.
     - [7](num_of_rooms)
+    - [5](num_of_rooms)
 - intent: room_type
   examples: |
     - I want to book [2](num_of_rooms) [simple](type_of_rooms) rooms
-    - [2](num_of_rooms) [deluxe](num_of_rooms) rooms
-    - [3](num_of_rooms) [simple](num_of_rooms) rooms
-    - book [4](num_of_rooms) [deluxe](num_of_rooms) rooms
-    - Please book [5](num_of_rooms) [simple](num_of_rooms) rooms
+    - [2](num_of_rooms) [deluxe](type_of_rooms) rooms
+    - [3](num_of_rooms) [simple](type_of_rooms) rooms
+    - book [4](num_of_rooms) [deluxe](type_of_rooms) rooms
+    - Please book [5](num_of_rooms) [simple](type_of_rooms) rooms
 - intent: clean_room
   examples: |
     - I want to have my room cleaned.
@@ -128,6 +129,7 @@ nlu:
     - Please send someone after [1](clean_time) hours.
     - After [2](clean_time) hours.
     - After [2](clean_time) hours
+    - After [4](clean_time) hours
 - intent: check-in
   examples: |
     - What are your check-in timings?
