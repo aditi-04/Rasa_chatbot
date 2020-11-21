@@ -1,0 +1,116 @@
+version: "2.0"
+
+# rules:
+
+# - rule: Activate form
+#   steps:
+#   - intent: request_rooms
+#   - action: hotel_form
+#   - active_loop: hotel_form
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_cheer_up
+
+- story: book room
+  steps:
+  - intent: book_room
+  - action: utter_roomavailable
+  - intent: number_of_rooms
+    entities:
+    - num_of_rooms: '7'
+  - slot_was_set:
+    - num_of_rooms: '7'
+  - action: utter_roomtype
+  - intent: room_type
+    entities:
+    - type_of_rooms: Simple
+  - slot_was_set:
+    - type_of_rooms: Simple
+  - action: utter_booked
+
+
+- story: clean after
+  steps:
+  - intent: clean_room
+  - action: utter_arrange
+  - intent: schedule_relatively
+    entities:
+    - clean_time: '2'
+  - slot_was_set:
+    - clean_time: '2'
+  - action: utter_relatively
+
+- story: clean now
+  steps:
+  - intent: clean_room
+  - action: utter_arrange
+  - intent: schedule_now
+  - action: utter_now
+
+
+- story: check-in timings
+  steps:
+  - intent: check-in
+  - action: utter_checkin
+
+- story: check-out timings
+  steps:
+  - intent: check-out
+  - action: utter_checkout
+
+- story: cancel booking
+  steps:
+  - intent: cancel
+  - action: utter_cancelbooking
+
+- story: cancellation policy
+  steps:
+  - intent: cancellation_policy
+  - action: utter_cancellationpolicy
+
+- story: about restaurant
+  steps:
+  - intent: restaurant
+  - action: utter_aboutrestaurant
+
+- story: breakfast availability
+  steps:
+  - intent: breakfast_availability
+  - action: utter_breakfastavailability
+
+- story: breakfast timings
+  steps:
+  - intent: breakfast_timings
+  - action: utter_breakfasttimings
+
+- story: restaurant timing
+  steps:
+  - intent: restaurant_timings
+  - action: utter_restauranttimings
+
