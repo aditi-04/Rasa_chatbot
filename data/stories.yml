@@ -61,10 +61,10 @@ stories:
   - action: utter_arrange
   - intent: schedule_relatively
     entities:
-    - clean_time: '2'
+    - clean_time: '4'
   - slot_was_set:
-    - clean_time: '2'
-  - action: utter_relatively
+    - clean_time: '4'
+    - action: utter_relatively
 
 - story: clean now
   steps:
@@ -114,3 +114,29 @@ stories:
   - intent: restaurant_timings
   - action: utter_restauranttimings
 
+- story: book room2
+  steps:
+  - intent: number_of_rooms
+    entities:
+    - num_of_rooms: '7'
+  - slot_was_set:
+    - num_of_rooms: '7'
+  - action: utter_roomtype
+  - intent: room_type
+    entities:
+    - type_of_rooms: Simple
+  - slot_was_set:
+    - type_of_rooms: Simple
+  - action: utter_booked
+
+# - story: interactive_story_1
+#   steps:
+#   - intent: clean_room
+#   - action: utter_arrange
+#   - intent: schedule_relatively
+#     entities:
+#     - clean_time: '2'
+#   - slot_was_set:
+#     - clean_time: '2'
+#   - action: action_set_time
+  
