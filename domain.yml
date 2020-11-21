@@ -3,10 +3,10 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- schedule_relatively
 - clean_room
-- book_room
 - number_of_rooms
+- book_room
+- schedule_relatively
 - room_type
 - greet
 - goodbye
